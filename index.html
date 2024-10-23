@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Form Validation</title>
+</head>
+<body>
+    <h2>Simple Form Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+
+        <label for="contact">contact:</label><br>
+        <input type="password" id="contact" name="contact"><br>
+        
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword"><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var contact=document.getElementById('contact').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+    if(name==""||email==""||contact==""||password==""||confirmPassword==""){
+alert("fill all requirment");
+return false;
+    }
+     if(contact.lenght<10){
+        alert("mubberhbhd");
+        return false;
+    }
+    if(password!=confirmPassword){
+        alert("password are not match");
+        return false;
+    }
+     
+    if (name === "") {
+        alert("Name is required.");
+        return false;
+    }
+
+    if (email === "") {
+        alert("Email is required.");
+        return false;
+    }
+
+    
+
+    if (password === "") {
+    
+        alert("Password is required.");
+        return false;
+    }
+
+    if (confirmPassword === "") {
+          alert("Please confirm your password.");
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert("please check your password");
+        return false;
+    }
+
+    return true;
+}
+ 
+
+    </script>
+</body>
+</html>
